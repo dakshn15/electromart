@@ -1,0 +1,472 @@
+@import "tailwindcss";
+@config "./tailwind.config.js";
+
+@layer base {
+
+    *,
+    ::before,
+    ::after {
+        border-color: theme('colors.border');
+    }
+}
+
+
+:root {
+    --card: 0 0% 100%;
+
+    --primary: 270 70% 60%;
+    --secondary: 280 20% 96%;
+
+    --primary-color: #9952e0;
+    --primary-light: rgba(153, 82, 224, 0.1);
+    --text-color: #333333;
+    --text-light: #757575;
+    --bg-color: #ffffff;
+    --bg-light: #f9fafb;
+    --bg-dark: #f0f0f0;
+    --border-color: #e7e0eb;
+    --white: #ffffff;
+}
+
+body {
+    background-color: var(--white);
+    color: var(--text-color);
+    font-family: 'Inter', sans-serif;
+    font-feature-settings: "rlig" 1, "calt" 1;
+    scroll-behavior: smooth;
+}
+
+.no-scroll {
+    overflow: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    line-height: 1.2 !important;
+}
+
+::-webkit-scrollbar {
+    width: 6px;
+    height: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--primary-color);
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+
+button {
+    outline: none !important;
+    @apply cursor-pointer;
+}
+
+/* Badge style for sales/discounts */
+.badge-sale {
+    background-color: rgb(239, 68, 68);
+    color: white;
+    font-size: 0.75rem;
+    font-weight: 500;
+    padding: 0.125rem 0.625rem;
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    border-radius: 0.25rem;
+    -webkit-border-radius: 0.25rem;
+    -moz-border-radius: 0.25rem;
+    -ms-border-radius: 0.25rem;
+    -o-border-radius: 0.25rem;
+}
+
+/* Category item hover animation */
+.category-item {
+    transition: transform 0.3s ease;
+}
+
+.category-item:hover {
+    transform: scale(1.05);
+}
+
+/* Custom animations */
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulse-gentle {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.8;
+    }
+}
+
+.animate-fade-in {
+    animation: fade-in 0.3s ease-out;
+}
+
+.animate-pulse-gentle {
+    animation: pulse-gentle 2s ease-in-out infinite;
+}
+
+/* Custom button styles */
+.btn-primary,
+.btn-outline {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+    text-transform: capitalize;
+    line-height: 1;
+    gap: 10px;
+    padding: 12px 20px;
+    font-weight: 500;
+    background-color: var(--primary-color);
+    color: var(--white);
+    border: 1px solid var(--primary-color);
+    outline: none;
+    border-radius: 0.375rem;
+    -webkit-border-radius: 0.375rem;
+    -moz-border-radius: 0.375rem;
+    -ms-border-radius: 0.375rem;
+    -o-border-radius: 0.375rem;
+    transition: all 300ms ease-in-out;
+    -webkit-transition: all 300ms ease-in-out;
+    -moz-transition: all 300ms ease-in-out;
+    -ms-transition: all 300ms ease-in-out;
+    -o-transition: all 300ms ease-in-out;
+}
+
+.btn-outline {
+    background-color: transparent;
+    color: var(--primary-color);
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+    background-color: hsl(var(--primary) / 0.8);
+    border-color: hsl(var(--primary) / 0.8);
+}
+
+.btn-outline:hover,
+.btn-outline:focus {
+    background-color: hsl(var(--primary) / 0.8);
+    border-color: hsl(var(--primary) / 0.8);
+    color: var(--white);
+}
+
+/* Custom input styles */
+.input {
+    width: 100%;
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: 0.375rem;
+    background-color: transparent;
+    transition: border-color 0.2s ease;
+    -webkit-border-radius: 0.375rem;
+    -moz-border-radius: 0.375rem;
+    -ms-border-radius: 0.375rem;
+    -o-border-radius: 0.375rem;
+}
+
+.form-input {
+    width: 100%;
+    padding: 0.5rem 1rem;
+    border-radius: 0.375rem;
+    border: 1px solid var(--border-color);
+    outline: none;
+    background-color: transparent;
+}
+
+.form-input:focus {
+    border-color: hsl(var(--primary));
+}
+
+select {
+    padding: 8px 35px 8px 15px !important;
+    appearance: none;
+    outline: none;
+    cursor: pointer;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 448 512'%3E%3Cpath fill='%23000000' d='M201.4 374.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 306.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-size: 12px;
+    background-position: calc(100% - 15px) 50%;
+}
+
+/* Custom card styles */
+.card {
+    background-color: hsl(var(--card));
+    border-radius: 0.5rem;
+    border: 1px solid var(--border-color);
+    overflow: hidden;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+/* swiper css */
+.swiper-slide {
+    @apply !h-auto
+}
+
+.swiper {
+    @apply !px-2.5 !-mx-2.5;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+    @apply !w-11 !h-11 bg-primary rounded-full !text-white transition-all duration-300;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.swiper-button-next {
+    @apply !end-0 !start-auto
+}
+
+.swiper-button-prev {
+    @apply !start-0 !end-auto
+}
+
+.swiper-button-next:after,
+.swiper-button-prev:after {
+    @apply !text-lg font-bold
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+    @apply bg-primary !text-white -translate-y-0.5;
+    box-shadow: 0 6px 16px rgba(109, 40, 217, 0.25);
+}
+
+.swiper-button-prev.swiper-button-disabled,
+.swiper-button-next.swiper-button-disabled {
+    @apply !pointer-events-auto
+}
+
+/* header css */
+.site-header .logo-col,
+.mobile-menu .logo-col,
+.site-footer .footer-logo {
+    max-width: 120px;
+    width: 100%;
+}
+
+.site-header .main-nav>.has-item>a:after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 0;
+    width: 7px;
+    height: 7px;
+    border-top: 2px solid #374151;
+    border-left: 2px solid #374151;
+    transform: translateY(-50%) rotate(225deg);
+    -webkit-transform: translateY(-50%) rotate(225deg);
+    -moz-transform: translateY(-50%) rotate(225deg);
+    -ms-transform: translateY(-50%) rotate(225deg);
+    -o-transform: translateY(-50%) rotate(225deg);
+    transition: all ease-in-out 0.5s;
+    -webkit-transition: all ease-in-out 0.5s;
+    -moz-transition: all ease-in-out 0.5s;
+    -ms-transition: all ease-in-out 0.5s;
+    -o-transition: all ease-in-out 0.5s;
+    z-index: 1;
+}
+
+.site-header .main-nav>.has-item:hover>a:after {
+    border-color: var(--primary-color);
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+}
+
+/* search popup css */
+.search-bar {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.search-bar input {
+    width: 100%;
+    padding: 13px 100px 13px 40px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background-color: var(--bg-light);
+    transition: all 0.2s;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+    -webkit-transition: all 0.2s;
+    -moz-transition: all 0.2s;
+    -ms-transition: all 0.2s;
+    -o-transition: all 0.2s;
+}
+
+.search-bar input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.2);
+}
+
+.search-bar i {
+    position: absolute;
+    left: 16px;
+    color: var(--text-light);
+}
+
+.search-bar button {
+    position: absolute;
+    right: 0.5rem;
+    padding: 6px 15px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+}
+
+/* home-banner-sec css */
+.home-banner-sec .home-arrow {
+    position: unset;
+    margin: 0;
+}
+
+/* color variant swatch */
+.color-variant-swatch .radio-buttons input:checked+label {
+    -webkit-box-shadow: 0 0 0 1px #333, inset 0 0 0 2px #fff;
+    box-shadow: 0 0 0 1px #333, inset 0 0 0 2px #fff;
+    border: none;
+}
+
+/* time counter */
+.deal-timeline .counter:not(:last-of-type) .count:before,
+.deal-timeline .counter:not(:last-of-type) .count:after {
+    content: '';
+    position: absolute;
+    height: 3px;
+    width: 3px;
+    background-color: var(--primary-color);
+    right: 2px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+
+.deal-timeline .counter:not(:last-of-type) .count:before {
+    top: 3px;
+}
+
+.deal-timeline .counter:not(:last-of-type) .count:after {
+    bottom: 3px;
+}
+
+/* product-page-css */
+.thumbnail-slider .swiper-slide-thumb-active .thumb-image {
+    border-color: var(--primary-color);
+}
+
+/* product-list page css */
+/* checkbox css */
+.radio-btn input,
+.checkbox input {
+    height: 15px;
+    width: 15px;
+    accent-color: var(--primary-color);
+    cursor: pointer;
+}
+
+.checkbox label,
+.radio-btn label {
+    cursor: pointer;
+}
+
+.view-toggle.active {
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+
+.offer-swiper .radio-buttons input[type="radio"]:checked+label.color-var {
+    outline: 1px solid var(--primary-color);
+}
+
+
+/* responsive css */
+@media (min-width: 640px) {
+    .list-view .product-card {
+        flex-direction: row;
+        align-items: center;
+        gap: 20px;
+        padding: 15px;
+    }
+
+    .list-view .product-image {
+        width: 250px;
+    }
+
+    .list-view .product-card .product-image {
+        border-radius: 8px;
+        -webkit-border-radius: 8px;
+        -moz-border-radius: 8px;
+        -ms-border-radius: 8px;
+        -o-border-radius: 8px;
+    }
+
+    .list-view .product-card .product-content {
+        flex: 1;
+        gap: 20px;
+    }
+
+    .list-view .product-card .product-content>div {
+        padding: 0;
+        border: 0;
+    }
+
+    .list-view .product-card .product-content button {
+        width: auto;
+    }
+}
+
+@media screen and (max-width: 767px) {
+
+   body {
+        font-size: 14px;
+    }
+
+    .swiper-button-next,
+    .swiper-button-prev {
+        @apply !h-9 !w-9
+    }
+
+    .swiper-button-next:after,
+    .swiper-button-prev:after {
+        @apply !text-base
+    }
+}
