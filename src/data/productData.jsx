@@ -3,7 +3,7 @@ export const products = [
   {
     id: 1,
     name: "Ultra HD Smart Watch Pro",
-    brand: "Techzonix",
+    brand: "ElectroMart",
     images: [
       imageMap.product1,
       imageMap.product2,

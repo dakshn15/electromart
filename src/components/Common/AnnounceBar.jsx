@@ -25,7 +25,7 @@ const AnnounceBar = () => {
               </g>
             </svg>
             Free shipping on orders over $50!
-            <Link to="/shop" className="underline">Shop now</Link>
+            <Link to="/products" className="underline">Shop now</Link>
           </p>
           <div className="flex items-center gap-3">
             <LanguageDropdown selected={selectedLang} onChange={setSelectedLang} />

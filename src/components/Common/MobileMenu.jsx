@@ -37,7 +37,7 @@ function MobileMenu({ isOpen, onClose }) {
         <div className="flex justify-between items-center p-4 border-b">
           <div className="logo-col">
             <Link to="/">
-              <img src={imageMap["logo.png"]} alt="logo" loading="lazy" />
+              <img src={imageMap.logo} alt="logo" loading="lazy" />
             </Link>
           </div>
           <button onClick={onClose} className="text-gray-500 hover:text-primary transition-colors">

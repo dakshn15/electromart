@@ -47,11 +47,11 @@ const ContactInfo = () => (
           <h3 className="font-heading font-semibold text-xl mb-2">Email</h3>
           <p className="text-gray-600 mb-1">General Inquiries:</p>
           <p className="mb-2">
-            <a href="mailto:info@techzonix.com" className="text-primary hover:text-primary-dark">info@techzonix.com</a>
+            <a href="mailto:info@electromart.com" className="text-primary hover:text-primary-dark">info@electromart.com</a>
           </p>
           <p className="text-gray-600 mb-1">Customer Support:</p>
           <p className="mb-4">
-            <a href="mailto:support@techzonix.com" className="text-primary hover:text-primary-dark">support@techzonix.com</a>
+            <a href="mailto:support@electromart.com" className="text-primary hover:text-primary-dark">support@electromart.com</a>
           </p>
           <p className="text-sm text-gray-500">We aim to respond within 24 hours</p>
         </div>

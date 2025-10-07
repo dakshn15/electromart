@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useCart } from "../../context/CartContext";
 import { useWishlist } from "../../context/WishlistContext";
 import { Link, useNavigate } from "react-router-dom";
@@ -10,15 +10,73 @@ import SearchPopup from "./SearchPopup";
 import MobileMenu from "./MobileMenu";
 import imageMap from "../../utils/imageMap";
 import { useUser } from "../../context/UserContext";
+import { products } from "../../data/productData";
 
 const Header = () => {
   const [cartOpen, setCartOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [searchQuery, setSearchQuery] = useState("");
+  const [showSuggestions, setShowSuggestions] = useState(false);
+  const [activeIndex, setActiveIndex] = useState(-1);
   const { cart } = useCart();
   const { wishlist } = useWishlist();
   const { isLoggedIn } = useUser();
   const navigate = useNavigate();
+
+  const inputRef = useRef(null);
+  const dropdownRef = useRef(null);
+
+  const filteredProducts = searchQuery
+    ? products.filter((p) => p.name.toLowerCase().includes(searchQuery.toLowerCase()))
+    : [];
+
+  useEffect(() => {
+    if (!searchQuery) {
+      setShowSuggestions(false);
+      setActiveIndex(-1);
+    } else {
+      setShowSuggestions(true);
+    }
+  }, [searchQuery]);
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (
+        dropdownRef.current &&
+        !dropdownRef.current.contains(event.target) &&
+        inputRef.current &&
+        !inputRef.current.contains(event.target)
+      ) {
+        setShowSuggestions(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
+  const handleNavigateTo = (link) => {
+    setShowSuggestions(false);
+    setSearchQuery("");
+    navigate(link);
+  };
+
+  const handleKeyDown = (e) => {
+    if (!showSuggestions || filteredProducts.length === 0) return;
+    if (e.key === "ArrowDown") {
+      e.preventDefault();
+      setActiveIndex((prev) => (prev + 1) % filteredProducts.length);
+    } else if (e.key === "ArrowUp") {
+      e.preventDefault();
+      setActiveIndex((prev) => (prev - 1 + filteredProducts.length) % filteredProducts.length);
+    } else if (e.key === "Enter") {
+      e.preventDefault();
+      const chosen = activeIndex >= 0 ? filteredProducts[activeIndex] : filteredProducts[0];
+      if (chosen) handleNavigateTo(chosen.link);
+    } else if (e.key === "Escape") {
+      setShowSuggestions(false);
+    }
+  };
 
   return (
     <>
@@ -70,11 +128,56 @@ const Header = () => {
 
             {/* Search Bar */}
             <div className="hidden lg:flex flex-1 xl:max-w-sm max-w-[250px]">
-              <div className="group relative w-full">
-                <input type="text" placeholder="Search products..." className="form-input !pe-10" />
-                <button type="button" className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400">
+              <div className="group relative w-full" ref={dropdownRef}>
+                <input
+                  ref={inputRef}
+                  type="text"
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  onFocus={() => setShowSuggestions(Boolean(searchQuery))}
+                  onKeyDown={handleKeyDown}
+                  placeholder="Search products..."
+                  className="form-input !pe-10"
+                />
+                <button
+                  type="button"
+                  aria-label="Search"
+                  onClick={() => {
+                    const chosen = filteredProducts[0];
+                    if (chosen) handleNavigateTo(chosen.link);
+                  }}
+                  className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400"
+                >
                   <FaSearch className="group-focus-within:text-primary" />
                 </button>
+
+                {showSuggestions && filteredProducts.length > 0 && (
+                  <ul className="absolute left-0 right-0 mt-1 max-h-80 overflow-auto bg-white border border-gray-200 rounded-lg shadow-lg z-30">
+                    {filteredProducts.slice(0, 8).map((item, idx) => (
+                      <li
+                        key={item.id}
+                        className={`flex items-center gap-3 px-3 py-2 cursor-pointer ${
+                          idx === activeIndex ? "bg-gray-100" : "hover:bg-gray-50"
+                        }`}
+                        onMouseEnter={() => setActiveIndex(idx)}
+                        onMouseDown={(e) => e.preventDefault()}
+                        onClick={() => handleNavigateTo(item.link)}
+                      >
+                        <img src={item.image} alt={item.name} className="h-8 w-8 rounded object-cover" loading="lazy" />
+                        <div className="min-w-0 flex-1">
+                          <p className="text-sm text-gray-800 truncate">{item.name}</p>
+                          <p className="text-xs text-gray-500 truncate">{item.category}</p>
+                        </div>
+                        <span className="text-sm font-medium text-gray-900">${item.price}</span>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+                {showSuggestions && searchQuery && filteredProducts.length === 0 && (
+                  <div className="absolute left-0 right-0 mt-1 bg-white border border-gray-200 rounded-lg shadow-lg z-30 px-3 py-2 text-sm text-gray-500">
+                    No products found
+                  </div>
+                )}
               </div>
             </div>
 

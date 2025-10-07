@@ -34,7 +34,7 @@ const HeroSection = () => {
                   </h2>
                   <p className="xl:text-xl lg:text-lg text-gray-600 mb-6">{slide.desc}</p>
                   <div className="flex justify-center lg:justify-start gap-4">
-                    <Link to="/shop" className="btn-primary">Shop Now</Link>
+                    <Link to="/products" className="btn-primary">Shop Now</Link>
                   </div>
                 </div>
                 <div className="lg:w-1/2 w-full lg:pb-0 pb-16">

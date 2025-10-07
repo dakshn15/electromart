@@ -15,7 +15,7 @@ const ShippingReturn = () => (
             <h2 className="flex-1 text-2xl lg:text-3xl font-bold text-gray-900">Shipping Policy</h2>
           </div>
           <div>
-            <p className="mb-5">At Techzonix, we're committed to delivering top-quality electronics to your doorstep quickly and reliably. We offer multiple shipping options to suit your needs.</p>
+            <p className="mb-5">At ElectroMart, we're committed to delivering top-quality electronics to your doorstep quickly and reliably. We offer multiple shipping options to suit your needs.</p>
             <h3 className="text-xl font-bold text-gray-900">Shipping Methods</h3>
             <div className="my-6">
               <div className="grid grid-cols-1 md:grid-cols-2 md:gap-6 gap-4">
@@ -89,7 +89,7 @@ const ShippingReturn = () => (
           </div>
           <div>
             <h3 className="text-xl font-bold text-gray-900 mb-4">Delivery Times</h3>
-            <p>At Techzonix, we ensure fast and flexible delivery for all your tech needs. Standard deliveries typically arrive between 10 AM and 8 PM. For urgent needs, express deliveries can be scheduled within specific time windows.</p>
+            <p>At ElectroMart, we ensure fast and flexible delivery for all your tech needs. Standard deliveries typically arrive between 10 AM and 8 PM. For urgent needs, express deliveries can be scheduled within specific time windows.</p>
             <div className="my-6">
               <h4 className="font-semibold text-lg mb-4">Available Delivery Windows (Express Delivery)</h4>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -131,7 +131,7 @@ const ShippingReturn = () => (
             <p>We provide contactless delivery for your safety and convenience. At checkout, select the contactless option and include specific instructions. Our delivery team will follow your preferences and notify you once the package is delivered.</p>
             <div className="bg-primary/10 md:p-6 p-4 rounded-lg my-6 border-l-4 border-primary">
               <h4 className="font-semibold mb-2">Missing or Incomplete Deliveries</h4>
-              <p>If your order is missing items or hasn't arrived within the expected delivery window, please contact our customer support team at <strong>(800) 987-6543</strong> or <a href="mailto:support@techzonix.com" className="underline">support@techzonix.com</a>. We will resolve the issue promptly to ensure you receive your complete order as soon as possible.</p>
+              <p>If your order is missing items or hasn't arrived within the expected delivery window, please contact our customer support team at <strong>(800) 987-6543</strong> or <a href="mailto:support@electromart.com" className="underline">support@electromart.com</a>. We will resolve the issue promptly to ensure you receive your complete order as soon as possible.</p>
             </div>
           </div>
         </div>
@@ -145,7 +145,7 @@ const ShippingReturn = () => (
           </div>
           <div>
             <h3 className="text-xl font-bold text-gray-900 mb-4">100% Satisfaction Guarantee</h3>
-            <p>At Techzonix, your satisfaction is our top priority. If you're not completely satisfied with the quality, functionality, or condition of your order, we offer a hassle-free return and refund process.</p>
+            <p>At ElectroMart, your satisfaction is our top priority. If you're not completely satisfied with the quality, functionality, or condition of your order, we offer a hassle-free return and refund process.</p>
             <div className="bg-gray-50 rounded-lg my-6 md:p-6 p-4">
               <h4 className="font-semibold text-lg mb-4">Our Guarantee Covers:</h4>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -231,7 +231,7 @@ const ShippingReturn = () => (
               <p className="mb-4">If you have any questions about our return policy or need assistance with a return, our customer service team is here to help.</p>
               <div className="flex flex-wrap gap-4">
                 <a href="tel:+15551234567" className="inline-flex items-center bg-white border border-gray-300 text-gray-700 hover:bg-gray-50 px-4 py-2 rounded-md transition text-sm font-medium"><FaPhone className="h-4 w-4 mr-2" />(555) 123-4567</a>
-                <a href="mailto:support@techzonix.com" className="inline-flex items-center bg-white border border-gray-300 text-gray-700 hover:bg-gray-50 px-4 py-2 rounded-md transition text-sm font-medium"><FaEnvelope className="h-4 w-4 mr-2" />support@techzonix.com</a>
+                <a href="mailto:support@electromart.com" className="inline-flex items-center bg-white border border-gray-300 text-gray-700 hover:bg-gray-50 px-4 py-2 rounded-md transition text-sm font-medium"><FaEnvelope className="h-4 w-4 mr-2" />support@electromart.com</a>
                 <a href="/contact" className="inline-flex items-center bg-primary hover:bg-primary/80 text-white px-4 py-2 rounded-md transition-all duration-300 text-sm font-medium border"><FaComments className="h-4 w-4 mr-2" />Live Chat</a>
               </div>
             </div>

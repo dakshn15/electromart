@@ -3,7 +3,7 @@
 export const navigationLinks = [
   { name: 'Home', path: '/' },
   // Shop menu will be dynamically generated in Header.jsx
-  { name: 'Shop', path: '/shop' },
+  { name: 'Shop', path: '/products' },
   { name: 'Blog', path: '/blogs' },
   { name: 'About', path: '/about' },
   { name: 'Contact', path: '/contact' },
@@ -26,9 +26,9 @@ export const footerCategories = [
 ];
 
 export const companyInfo = {
-  name: 'Techzonix',
+  name: 'ElectroMart',
   address: '123 Tech Street, Digital City',
   email: 'info@electroshop.com',
   phone: '+1 (555) 123-4567',
-  copyright: '© 2025 Techzonix. All rights reserved.'
+  copyright: '© 2025 ElectroMart. All rights reserved.'
 }; 

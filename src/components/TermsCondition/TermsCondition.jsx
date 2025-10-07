@@ -10,7 +10,7 @@ const TermsCondition = () => {
           <h2 className="font-bold text-xl md:text-3xl mb-5">1. Introduction</h2>
           <div className="bg-primary/10 border-l-4 border-primary p-4 md:pl-6 mb-6 rounded-lg">
             <p className="mb-3">
-              Welcome to Techzonix's website. These Terms and Conditions govern your use of our website and the purchase of products through our online platform. By accessing our website and/or placing orders, you agree to be bound by these Terms and Conditions.
+              Welcome to ElectroMart's website. These Terms and Conditions govern your use of our website and the purchase of products through our online platform. By accessing our website and/or placing orders, you agree to be bound by these Terms and Conditions.
             </p>
             <p>
               Please read these terms carefully before using our services. If you do not agree to all the terms and conditions of this agreement, you may not access the website or use any services.
@@ -22,11 +22,11 @@ const TermsCondition = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
             <div className="bg-gray-50 border p-4 rounded-lg">
               <p className="font-medium text-gray-700 mb-1">"Company", "we", "us", or "our"</p>
-              <p className="text-gray-600">Refers to Techzonix.</p>
+              <p className="text-gray-600">Refers to ElectroMart.</p>
             </div>
             <div className="bg-gray-50 border p-4 rounded-lg">
               <p className="font-medium text-gray-700 mb-1">"Website"</p>
-              <p className="text-gray-600">Refers to Techzonix's website, accessible at www.techzonix.com.</p>
+              <p className="text-gray-600">Refers to ElectroMart's website, accessible at www.electromart.com.</p>
             </div>
             <div className="bg-gray-50 border p-4 rounded-lg">
               <p className="font-medium text-gray-700 mb-1">"Products"</p>
@@ -88,7 +88,7 @@ const TermsCondition = () => {
           {/* 8. Intellectual Property */}
           <h2 className="font-bold text-xl md:text-3xl mb-5">8. Intellectual Property</h2>
           <p className="mb-4">
-            All content on the website, including but not limited to text, graphics, logos, images, audio clips, digital downloads, and software, is the property of Techzonix or its content suppliers and is protected by international copyright laws.
+            All content on the website, including but not limited to text, graphics, logos, images, audio clips, digital downloads, and software, is the property of ElectroMart or its content suppliers and is protected by international copyright laws.
           </p>
           <p className="mb-6">
             You may not reproduce, distribute, modify, display, perform, or use any content from our website without our express written permission.
@@ -123,7 +123,7 @@ const TermsCondition = () => {
           {/* 10. Limitation of Liability */}
           <h2 className="font-bold text-xl md:text-3xl mb-5">10. Limitation of Liability</h2>
           <p className="mb-4">
-            To the maximum extent permitted by law, Techzonix shall not be liable for any indirect, incidental, special, consequential, or punitive damages, including without limitation, loss of profits, data, use, goodwill, or other intangible losses, resulting from:
+            To the maximum extent permitted by law, ElectroMart shall not be liable for any indirect, incidental, special, consequential, or punitive damages, including without limitation, loss of profits, data, use, goodwill, or other intangible losses, resulting from:
           </p>
           <ol className="space-y-2 mb-6">
             <li className="flex items-start">
@@ -147,7 +147,7 @@ const TermsCondition = () => {
           {/* 11. Indemnification */}
           <h2 className="font-bold text-xl md:text-3xl mb-5">11. Indemnification</h2>
           <p className="mb-6">
-            You agree to indemnify, defend, and hold harmless Techzonix and its affiliates, officers, agents, and employees, from and against any claims, liabilities, damages, losses, and expenses, including without limitation reasonable legal and accounting fees, arising out of or in any way connected with your access to or use of the website or your violation of these Terms.
+            You agree to indemnify, defend, and hold harmless ElectroMart and its affiliates, officers, agents, and employees, from and against any claims, liabilities, damages, losses, and expenses, including without limitation reasonable legal and accounting fees, arising out of or in any way connected with your access to or use of the website or your violation of these Terms.
           </p>
 
           {/* 12. Modifications to Terms */}
@@ -169,7 +169,7 @@ const TermsCondition = () => {
             <div className="space-y-2">
               <p className="flex items-center">
                 <FaStore className="text-primary mr-3 w-5 text-center flex-shrink-0" />
-                Techzonix
+                ElectroMart
               </p>
               <p className="flex items-center">
                 <FaMapMarkerAlt className="text-primary mr-3 w-5 text-center flex-shrink-0" />
@@ -177,7 +177,7 @@ const TermsCondition = () => {
               </p>
               <p className="flex items-center">
                 <FaEnvelope className="text-primary mr-3 w-5 text-center flex-shrink-0" />
-                legal@techzonix.com
+                legal@electromart.com
               </p>
               <p className="flex items-center">
                 <FaPhone className="text-primary mr-3 w-5 text-center flex-shrink-0" />

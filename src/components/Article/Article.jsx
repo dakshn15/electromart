@@ -86,7 +86,7 @@ const Article = () => {
             <img src={blog.authorImg || imageMap.team1} alt={blog.author || "Author"} className="w-24 h-24 rounded-full object-cover" />
             <div>
               <h3 className="font-heading font-semibold text-xl mb-2">About the Author</h3>
-              <p className="text-gray-700 mb-4">{blog.authorBio || "Emma Wilson is a certified electronics technician, tech writer, and sustainability advocate. She specializes in device maintenance, repair techniques, and reducing electronic waste. When she's not writing for Techzonix, she teaches electronics maintenance workshops and runs a tech repair community center."}</p>
+              <p className="text-gray-700 mb-4">{blog.authorBio || "Emma Wilson is a certified electronics technician, tech writer, and sustainability advocate. She specializes in device maintenance, repair techniques, and reducing electronic waste. When she's not writing for ElectroMart, she teaches electronics maintenance workshops and runs a tech repair community center."}</p>
               <div className="flex gap-3">
                 <a href="https://twitter.com/" target="_blank" rel="noopener noreferrer" className="text-primary text-lg hover:text-primary-dark"><FaXTwitter className="text-lg" /></a>
                 <a href="https://facebook.com/" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-primary-dark"><FaFacebookF className="text-lg" /></a>
