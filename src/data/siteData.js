@@ -28,7 +28,7 @@ export const footerCategories = [
 export const companyInfo = {
   name: 'ElectroMart',
   address: '123 Tech Street, Digital City',
-  email: 'info@electroshop.com',
+  email: 'info@electromart.com',
   phone: '+1 (555) 123-4567',
   copyright: '© 2025 ElectroMart. All rights reserved.'
 }; 
